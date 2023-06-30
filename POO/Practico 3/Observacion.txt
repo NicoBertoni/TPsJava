@@ -1,0 +1,25 @@
+En la clase Registro, en el método procesa, una posible solución para poder usar el método hacerAportes de Trabajador.
+
+public void procesarDatos(Persona persona) {
+
+if(persona.getClass()==Trabajador.class){
+Trabajador trabajador=(Trabajador) persona;
+System.out.println("El nombre del trabajador es: "+trabajador.getNombre());
+System.out.println("Dni del trabajador: "+trabajador.getDni());
+System.out.println("Fecha de nacimiento: "+trabajador.getFechaNacimiento());
+System.out.println("Domicilio del trabajador: "+trabajador.getDomicilio());
+System.out.println("Edad: "+trabajador.calcularEdad());
+trabajador.cobrar();
+trabajador.hacerAportes(); //hacer aportes
+
+}else{
+Jubilado jubilado=(Jubilado) persona;
+System.out.println("El nombre del jubilado es:"+jubilado.getNombre());
+System.out.println("Dni: "+jubilado.getDni());
+System.out.println("Domicilio del jubilado: "+jubilado.getDomicilio());
+System.out.println("Fecha de nacimiento: "+jubilado.getFechaNacimiento());
+System.out.println("Dias vividos: "+jubilado.calcularDiasVividos());
+jubilado.cobrar();
+}
+
+}
